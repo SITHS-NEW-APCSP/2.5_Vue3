@@ -7,12 +7,14 @@
 </template>
 
 <script>
-import { ref, computed} from "vue";
+import { ref, computed, watchEffect} from "vue";
 export default {
     setup(){
         let num = ref(1);
         let comp = computed(() => Math.log(num.value));
-        
+        watchEffect(() => {
+            console.log(`This is a simple method to watch for ANY state cange. Current num val ${num.value}, current comp val ${comp.value}`);
+        });
         return {num, comp};
     }
 }
