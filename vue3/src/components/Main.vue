@@ -1,15 +1,27 @@
 <template>
-  <div>
-      <bruh>bruh level : {{b_lev}}</bruh>
+   <div>
+    <Suspense>
+        <template #default>
+            <Default />
+        </template>
+      
+        <template #fallback>
+            <h1>bruh...</h1>
+        </template>
+        
+    </Suspense>
+    
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import Default from "./default.vue";
 export default {
     setup(){
-        const b_lev = ref('bruh');
-        return { b_lev };
+        
+    },
+    components:{
+        Default
     }
 
 }
