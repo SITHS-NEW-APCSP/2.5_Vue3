@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import { ref, computed } from "vue";
+import { ref, computed} from "vue";
 export default {
     setup(){
         let num = ref(1);
         let comp = computed(() => Math.log(num.value));
-
+        
         return {num, comp};
     }
 }
