@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link to="/main">Main</router-link> |
-    <router-link to="/secondary">Sec</router-link> |
+    
     
     <div>
       <router-view />

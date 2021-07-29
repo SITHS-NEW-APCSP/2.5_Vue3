@@ -9,12 +9,7 @@ const routes = [
         component: () =>
             import(/* webpackChunkName: "about" */ "../components/Main.vue"),
     },
-    {
-        path: '/secondary',
-        name: 'Sec',
-        component: () =>
-            import(/* webpackChunkName: "about" */ "../components/Second.vue"),
-    },
+    
 ];
 
 const router = createRouter({

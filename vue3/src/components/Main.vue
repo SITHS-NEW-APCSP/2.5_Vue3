@@ -1,16 +1,22 @@
 <template>
   <div>
-      <bruh>bruh level : {{b_lev}}</bruh>
+      <Sec />
   </div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, provide } from "vue";
+import Sec from './Second.vue';
 export default {
+    components:{
+        Sec,
+    },
     setup(){
-        const b_lev = ref('bruh');
-        return { b_lev };
-    }
+        let twth =  ref(23);
+        
+        provide('injval', `twenty three : ${twth.value}`);
+
+    },
 
 }
 </script>

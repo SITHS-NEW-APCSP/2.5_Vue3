@@ -1,21 +1,18 @@
 <template>
   <div>
-      <p> click the button to change {{num}} to summin else </p>
-      <button v-on:click="num += 1">Button</button>
-      <p>This is a computed() property {{comp}}  (jajajaja)</p>
+      <p>{{injval1}}</p>
+      <p>{{injval2}}</p>
   </div>
 </template>
 
 <script>
-import { ref, computed, watchEffect} from "vue";
+import { inject} from "vue";
 export default {
     setup(){
-        let num = ref(1);
-        let comp = computed(() => Math.log(num.value));
-        watchEffect(() => {
-            console.log(`This is a simple method to watch for ANY state cange. Current num val ${num.value}, current comp val ${comp.value}`);
-        });
-        return {num, comp};
+       const injval1 = inject('injval_def', 'this is the defaulkt value of injection');
+       const injval2 = inject('injval');
+
+       return {injval1, injval2};
     }
 }
 </script>
