@@ -9,7 +9,7 @@
 import { inject} from "vue";
 export default {
     setup(){
-       const injval1 = inject('injval_def', 'this is the defaulkt value of injection');
+       const injval1 = inject('injval_def', 'this is the defaulkt value of an injection');
        const injval2 = inject('injval');
 
        return {injval1, injval2};
